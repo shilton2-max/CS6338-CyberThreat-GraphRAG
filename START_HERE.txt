@@ -1,0 +1,11 @@
+START HERE — CS-6338 CYBER THREAT INTELLIGENCE GRAPHRAG
+
+1. Open README.md and follow the Windows PowerShell instructions.
+2. Use Python 3.11, Neo4j Desktop, Ollama llama3.1:8b.
+3. After pip install, copy .env.example to .env and put your Neo4j password there.
+4. Run local tests: python -m unittest discover -s tests -v
+5. Run the pipeline in order: download -> extract -> init-db -> load -> import-attack -> embed -> ask -> qa-eval.
+6. NEVER claim that example gold data is human verified or that RAGAS/evaluation numbers exist until you run and check them.
+
+For the design architecture see ARCHITECTURE.md.
+For commands, screenshot requirements, and evaluation details see README.md.

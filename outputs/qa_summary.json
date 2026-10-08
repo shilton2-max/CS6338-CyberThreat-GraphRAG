@@ -1,0 +1,12 @@
+{
+  "verified_questions": 20,
+  "planned_system_runs": 40,
+  "successful_runs": 40,
+  "failed_runs": 0,
+  "average_retrieval_ms_successful_runs": 41.8,
+  "average_generation_ms_successful_runs": 3833.5,
+  "human_review_template": "C:\\Users\\sethh\\CS6338_GraphRAG\\CS6338_CyberThreat_GraphRAG_Implementation\\CS6338_CyberThreat_GraphRAG\\outputs\\human_review.csv",
+  "evaluation_results": "C:\\Users\\sethh\\CS6338_GraphRAG\\CS6338_CyberThreat_GraphRAG_Implementation\\CS6338_CyberThreat_GraphRAG\\outputs\\qa_results.json",
+  "evaluation_failures": "C:\\Users\\sethh\\CS6338_GraphRAG\\CS6338_CyberThreat_GraphRAG_Implementation\\CS6338_CyberThreat_GraphRAG\\outputs\\qa_failures.json",
+  "partial_checkpoint": "C:\\Users\\sethh\\CS6338_GraphRAG\\CS6338_CyberThreat_GraphRAG_Implementation\\CS6338_CyberThreat_GraphRAG\\outputs\\qa_results.partial.json"
+}

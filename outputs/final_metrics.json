@@ -1,0 +1,60 @@
+{
+  "benchmark": {
+    "human_verified_questions": 20,
+    "system_runs": 40,
+    "notes": [
+      "Lexical precision/recall/F1 compare generated answer tokens with the human-verified gold answer.",
+      "Answer similarity and answer relevance use all-MiniLM-L6-v2 cosine similarity.",
+      "Faithfulness proxy is the average best semantic similarity between each answer sentence and retrieved contexts; it is not official RAGAS entailment.",
+      "Document/entity precision and recall compare retrieved IDs with expected IDs in the human-verified benchmark.",
+      "Path hit rate is available for hybrid questions with expected graph entities."
+    ]
+  },
+  "summary_by_mode": {
+    "text": {
+      "runs": 20,
+      "lexical_precision": 0.0670456884999145,
+      "lexical_recall": 0.5557959632959634,
+      "lexical_f1": 0.11792206748050585,
+      "answer_similarity": 0.7116149932146072,
+      "answer_relevance": 0.7595004633069038,
+      "faithfulness_proxy": 0.4956894791889049,
+      "document_precision": 0.5,
+      "document_recall": 1.0,
+      "entity_precision": null,
+      "entity_recall": 0.0,
+      "path_hit_rate": null,
+      "average_retrieval_ms": 15.444999999999999,
+      "average_generation_ms": 4477.0549999999985
+    },
+    "hybrid": {
+      "runs": 20,
+      "lexical_precision": 0.0438730801657204,
+      "lexical_recall": 0.5214374976874977,
+      "lexical_f1": 0.08053196304888915,
+      "answer_similarity": 0.4794771037995815,
+      "answer_relevance": 0.49589082300662995,
+      "faithfulness_proxy": 0.5318535701852982,
+      "document_precision": 0.5,
+      "document_recall": 1.0,
+      "entity_precision": 0.08906249999999998,
+      "entity_recall": 1.0,
+      "path_hit_rate": 1.0,
+      "average_retrieval_ms": 68.07000000000001,
+      "average_generation_ms": 3189.93
+    }
+  },
+  "hybrid_minus_text": {
+    "lexical_precision_hybrid_minus_text": -0.023172608334194107,
+    "lexical_recall_hybrid_minus_text": -0.03435846560846567,
+    "lexical_f1_hybrid_minus_text": -0.037390104431616694,
+    "answer_similarity_hybrid_minus_text": -0.23213788941502567,
+    "answer_relevance_hybrid_minus_text": -0.26360964030027384,
+    "faithfulness_proxy_hybrid_minus_text": 0.03616409099639334,
+    "document_precision_hybrid_minus_text": 0.0,
+    "document_recall_hybrid_minus_text": 0.0,
+    "entity_precision_hybrid_minus_text": null,
+    "entity_recall_hybrid_minus_text": 1.0,
+    "path_hit_rate_hybrid_minus_text": null
+  }
+}

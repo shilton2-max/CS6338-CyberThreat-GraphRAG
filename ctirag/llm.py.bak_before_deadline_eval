@@ -1,0 +1,35 @@
+"""Local Ollama Llama 3.1 client. No external paid API required."""
+import json
+import os
+import requests
+from dotenv import load_dotenv
+load_dotenv()
+
+
+def chat(system: str, prompt: str, json_output: bool = False) -> str:
+    base = os.getenv("OLLAMA_URL", "http://localhost:11434").rstrip("/")
+    model = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
+    payload = {
+        "model": model, "stream": False,
+        "options": {"temperature": 0},
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": prompt}],
+    }
+    if json_output:
+        payload["format"] = "json"
+    try:
+        r = requests.post(base + "/api/chat", json=payload,
+                          timeout=int(os.getenv("REQUEST_TIMEOUT", "180")))
+        r.raise_for_status()
+    except requests.RequestException as exc:
+        raise RuntimeError("Ollama unavailable. Start Ollama and run `ollama pull llama3.1:8b`.") from exc
+    return r.json()["message"]["content"]
+
+
+def json_chat(system: str, prompt: str):
+    raw = chat(system, prompt, True)
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        # Exactly one repair attempt; malformed output is logged by the caller.
+        repaired = chat("Return only a valid JSON object preserving all original facts. Do not invent anything.", raw, True)
+        return json.loads(repaired)

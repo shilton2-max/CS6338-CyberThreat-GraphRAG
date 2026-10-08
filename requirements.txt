@@ -1,0 +1,15 @@
+# Tested interface targets: Python 3.10-3.12, Neo4j 5.x/2025.x/2026.x
+neo4j>=5.20,<7
+pydantic>=2.6,<3
+requests>=2.31
+beautifulsoup4>=4.12
+python-dotenv>=1.0
+rapidfuzz>=3.5
+numpy>=1.26,<2
+pandas>=2.1
+scikit-learn>=1.4
+sentence-transformers>=3,<6
+networkx>=3.2,<4
+gensim>=4.3.3,<5
+scipy>=1.11,<1.13
+streamlit>=1.35

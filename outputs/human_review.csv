@@ -1,0 +1,450 @@
+﻿question_id,mode,question,answer,gold_answer,factuality_1_to_5,completeness_1_to_5,coherence_1_to_5,reviewer_notes
+Q01,text,Which mitigations apply to APT28's use of PowerShell (T1059.001)?,"Based on the provided evidence, there is no direct connection between APT28's use of PowerShell (T1059.001) and any mitigations. However, the evidence does mention APT28's exploitation of CVE-2017-6742 (Cisco Bug ID: CSCve54313) and the use of PowerShell in the context of the Medusa ransomware.
+
+Since the question specifically asks about APT28's use of PowerShell (T1059.001), I will focus on that technique. However, I must note that the provided evidence does not directly connect APT28's use of PowerShell to any mitigations.
+
+The evidence does mention the use of PowerShell in the context of the Medusa ransomware, but it does not provide any direct connections between APT28's use of PowerShell and mitigations.
+
+Therefore, I must answer that there is not enough evidence in the provided text to answer the question reliably.
+
+However, I can provide some indirect information related to PowerShell and mitigations. The evidence mentions the use of PowerShell in the context of the Medusa ransomware, and it provides some general guidance on mitigating the use of PowerShell:
+
+* The use of PowerShell can be mitigated by disabling it or restricting its use.
+* The use of PowerShell can be","APT28 uses PowerShell (T1059.001). Documented mitigations include Privileged Account Management (M1026), Code Signing (M1045), and Execution Prevention (M1038).",2,2,3,Recognizes PowerShell but misses the three documented mitigations and says there is no direct connection.
+Q01,hybrid,Which mitigations apply to APT28's use of PowerShell (T1059.001)?,"The provided text appears to be a list of pairs of attack techniques and mitigation strategies, along with their corresponding sources and relationships. The text is in a format that suggests it is being used for threat intelligence or incident response purposes.
+
+Here is a summary of the pairs:
+
+1. **Logon Script (Windows) (ATTACK:T1037.001) -> Restrict Registry Permissions (ATTACK:M1024)**: APT28 uses a loader Trojan to add a Registry key for persistence, and the mitigation is to ensure proper permissions are set for Registry hives.
+2. **Network Denial of Service (ATTACK:T1498) -> Filter Network Traffic (ATTACK:M1037)**: APT28 conducted a DDoS attack, and the mitigation is to intercept incoming traffic upstream to filter out attack traffic.
+3. **Pass the Hash (ATTACK:T1550.002) -> Privileged Account Management (ATTACK:M1026)**: APT28 used pass the hash for lateral movement, and the mitigation is to limit credential overlap across systems.
+4. **Evil Twin (ATTACK:T1557.004) -> User Training (ATTACK:M1017)**: APT28 used a Wi-Fi Pineapple to set up Evil Twin","APT28 uses PowerShell (T1059.001). Documented mitigations include Privileged Account Management (M1026), Code Signing (M1045), and Execution Prevention (M1038).",2,2,3,Contains APT28 technique/mitigation material but does not directly answer the PowerShell mitigation question.
+Q02,text,Which mitigations apply to APT28's use of Ingress Tool Transfer (T1105)?,"Based on the provided evidence, APT28 uses the Ingress Tool Transfer (T1105) technique. The direct technique-mitigation pairs related to this technique are:
+
+Ingress Tool Transfer (T1105) -> Mitigation (T1078.001): Use secure protocols for remote access [APT28-CISCO-ROUTERS].
+
+Note: The provided evidence does not contain a direct mitigation for Ingress Tool Transfer (T1105). However, it suggests using secure protocols for remote access, which is related to the technique Valid Accounts (T1078.001).",APT28 uses Ingress Tool Transfer (T1105). Documented mitigations include Filter Network Traffic (M1037) and Network Intrusion Prevention (M1031).,2,2,4,Correctly identifies T1105 but gives the wrong mitigation mapping.
+Q02,hybrid,Which mitigations apply to APT28's use of Ingress Tool Transfer (T1105)?,"Based on the provided text, the following are some potential mitigation strategies for the tactics and techniques used by APT28:
+
+1. **Restrict Registry Permissions**: Ensure proper permissions are set for Registry hives to prevent users from modifying keys for logon scripts that may lead to persistence.
+2. **Set PowerShell Execution Policy**: Set PowerShell execution policy to execute only signed scripts.
+3. **Use Application Control**: Use application control where appropriate to restrict access to sensitive or otherwise dangerous language elements such as those used to execute arbitrary Windows APIs or scripts.
+4. **Filter Network Traffic**: When flood volumes exceed the capacity of the network connection being targeted, it is typically necessary to intercept the incoming traffic upstream to filter out the attack traffic from the legitimate traffic.
+5. **Limit Credential Overlap**: Limit credential overlap across systems to prevent the damage of credential compromise and reduce the adversary's ability to perform Lateral Movement between systems.
+6. **Train Users**: Train users to be suspicious about access points marked as “Open” or “Unsecure” as well as certificate errors.
+7. **Do Not Allow Domain Users to be in Local Administrator Group**: Do not allow a domain user to be in the local administrator group on multiple systems.
+8. **Enable Pass the Hash Mitigations",APT28 uses Ingress Tool Transfer (T1105). Documented mitigations include Filter Network Traffic (M1037) and Network Intrusion Prevention (M1031).,2,2,3,Lists general mitigations but does not clearly connect T1105 to both expected mitigations.
+Q03,text,Which mitigation applies to APT28's use of Logon Script (Windows) (T1037.001)?,"Based on the provided evidence, I can answer the question as follows:
+
+The question is about APT28's use of Logon Script (Windows) (T1037.001) and the applicable mitigation.
+
+From the evidence, I can see that APT28 exploited the vulnerability CVE-2017-6742 (Cisco Bug ID: CSCve54313) [T1190] to gain access to router information, and used default and weak SNMP community strings, including the default “public,” to access victim routers [T1078.001].
+
+However, I do not see any direct connection between APT28's use of Logon Script (Windows) (T1037.001) and the provided evidence.
+
+Therefore, I must say:
+
+'Not enough evidence in the indexed advisories and graph to answer that reliably.'
+
+However, I can provide some general mitigation advice that is applicable to the provided evidence:
+
+* Patch devices as advised by Cisco.
+* Do not use SNMP if you are not required to configure or manage devices remotely to prevent unauthorized users from accessing your router.
+* If you are required to manage routers remotely, establish allow and deny lists for SNMP.
+* Require VPNs or Jump Hosts for remote access.
+* Monitor for unauthorized scanning and access attempts.
+","APT28 uses Logon Script (Windows) (T1037.001), which is mitigated by Restrict Registry Permissions (M1024).",2,2,4,Identifies T1037.001 but does not supply the expected M1024 mitigation.
+Q03,hybrid,Which mitigation applies to APT28's use of Logon Script (Windows) (T1037.001)?,"The provided text appears to be a list of pairs of techniques used by the APT28 group, along with mitigation strategies to prevent or detect these techniques. Here's a breakdown of the pairs and their corresponding mitigation strategies:
+
+1. **PowerShell (ATTACK:T1059.001) -> Code Signing (ATTACK:M1045)**
+	* APT28 uses PowerShell scripts and commands.
+	* Mitigation: Set PowerShell execution policy to execute only signed scripts.
+2. **Logon Script (Windows) (ATTACK:T1037.001) -> Restrict Registry Permissions (ATTACK:M1024)**
+	* APT28 adds a Registry key to establish persistence.
+	* Mitigation: Ensure proper permissions are set for Registry hives to prevent users from modifying keys for logon scripts.
+3. **PowerShell (ATTACK:T1059.001) -> Execution Prevention (ATTACK:M1038)**
+	* APT28 downloads and executes PowerShell scripts and performs PowerShell commands.
+	* Mitigation: Use application control, and PowerShell Constrained Language mode to restrict access to sensitive language elements.
+4. **Network Denial of Service (ATTACK:T1498) -> Filter Network Traffic (ATTACK:M1037)**
+	*","APT28 uses Logon Script (Windows) (T1037.001), which is mitigated by Restrict Registry Permissions (M1024).",5,5,4,Contains the correct T1037.001 to M1024 relationship; extra unrelated pairs reduce focus.
+Q04,text,Which mitigations apply to APT28's use of Pass the Hash (T1550.002)?,"Based on the provided evidence, I can answer the question about the mitigations for APT28's use of Pass the Hash (T1550.002).
+
+Not enough evidence in the indexed advisories and graph to answer that reliably.
+
+However, I can provide some information about the mitigations for APT28's use of other techniques.
+
+APT28 uses the technique ""Exploit Public-facing Application"" (T1190) to exploit the vulnerability CVE-2017-6742 (Cisco Bug ID: CSCve54313).
+
+Here is a direct technique-mitigation pair:
+
+T1190 (Exploit Public-facing Application) -> Mitigation (T1189): Limit access to SNMP from trusted hosts only, or by disabling a number of SNMP Management Information bases (MIBs) [APT28-CISCO-ROUTERS].
+
+Additionally, the advisory recommends patching devices as advised by Cisco, and segmenting networks to restrict lateral movement from initial infected devices [AA25-071A].","APT28 uses Pass the Hash (T1550.002). Documented mitigations include Privileged Account Management (M1026), User Account Management (M1018), and User Account Control (M1052).",2,2,3,Mentions Pass the Hash but does not provide the three expected mitigations.
+Q04,hybrid,Which mitigations apply to APT28's use of Pass the Hash (T1550.002)?,"Based on the provided information, the following are some potential mitigation strategies for the techniques used by APT28:
+
+1.  **Network Intrusion Detection and Prevention Systems**: Implement network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware or unusual data transfer over known protocols like FTP.
+2.  **PowerShell Execution Policy**: Set PowerShell execution policy to execute only signed scripts to prevent the execution of malicious scripts.
+3.  **Registry Permissions**: Ensure proper permissions are set for Registry hives to prevent users from modifying keys for logon scripts that may lead to persistence.
+4.  **Application Control**: Use application control where appropriate to restrict access to sensitive or otherwise dangerous language elements such as those used to execute arbitrary Windows APIs or scripts.
+5.  **Filter Network Traffic**: Intercept incoming traffic upstream to filter out attack traffic from legitimate traffic when flood volumes exceed the capacity of the network connection being targeted.
+6.  **Privileged Account Management**: Limit credential overlap across systems to prevent the damage of credential compromise and reduce the adversary's ability to perform Lateral Movement between systems.
+7.  **User Training**: Train users to be suspicious about access points marked as “Open” or “Unsecure” as well as certificate errors.
+8. ","APT28 uses Pass the Hash (T1550.002). Documented mitigations include Privileged Account Management (M1026), User Account Management (M1018), and User Account Control (M1052).",2,2,3,Provides broad mitigation advice but not the expected Pass the Hash mitigation set.
+Q05,text,Which mitigation applies to APT28's Network Denial of Service technique (T1498)?,"Based on the provided evidence, I can answer the question as follows:
+
+The question is about APT28's Network Denial of Service technique (T1498) and which mitigation applies to it.
+
+From the evidence, I can see that APT28 exploited the vulnerability CVE-2017-6742 (Cisco Bug ID: CSCve54313) to gain access to router information and deploy malware. This is related to the technique ""Exploit Public-facing Application"" (T1190).
+
+However, the question specifically asks about the ""Network Denial of Service"" technique (T1498). Unfortunately, there is no direct connection between APT28's activities and this specific technique in the provided evidence.
+
+Therefore, I must say:
+
+Not enough evidence in the indexed advisories and graph to answer that reliably.
+
+However, I can provide some mitigation advice that is generally applicable to the techniques used by APT28:
+
+* Patch devices as advised by Cisco.
+* Do not use SNMP if you are not required to configure or manage devices remotely to prevent unauthorized users from accessing your router.
+* Establish allow and deny lists for your security technologies against the technique.
+* Test your technologies against the technique.
+* Analyze your detection and prevention technologies' performance.
+* Repeat the process for all","APT28 uses Network Denial of Service (T1498), which is mitigated by Filter Network Traffic (M1037).",3,2,4,Identifies T1498 but does not clearly provide the expected M1037 mitigation.
+Q05,hybrid,Which mitigation applies to APT28's Network Denial of Service technique (T1498)?,"Based on the retrieved MITRE ATT&CK graph evidence, these are the top technique-to-mitigation links found for the requested threat group:\n\n- Phishing for Information (T1598) -> Software Configuration (M1054); User Training (M1017) [MITRE-STIX]\n- Tool (T1588.002) -> Pre-compromise (M1056) [MITRE-STIX]\n- PowerShell (T1059.001) -> Privileged Account Management (M1026); Code Signing (M1045); Execution Prevention (M1038) [MITRE-STIX]\n- Ingress Tool Transfer (T1105) -> Filter Network Traffic (M1037); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Logon Script (Windows) (T1037.001) -> Restrict Registry Permissions (M1024) [MITRE-STIX]\n- Network Denial of Service (T1498) -> Filter Network Traffic (M1037) [MITRE-STIX]\n- Pass the Hash (T1550.002) -> Privileged Account Management (M1026); User Account Management (M1018); User Account Control (M1052) [MITRE-STIX]\n- Evil Twin (T1557.004) -> User Training (M1017); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Search Open Technical Databases (T1596) -> Pre-compromise (M1056) [MITRE-STIX]\n- Credentials (T1589.001) -> Pre-compromise (M1056) [MITRE-STIX]\n- Windows Command Shell (T1059.003) -> Execution Prevention (M1038) [MITRE-STIX]\n- Spearphishing Attachment (T1566.001) -> Software Configuration (M1054); Antivirus/Antimalware (M1049); User Account Management (M1018); User Training (M1017); Restrict Web-Based Content (M1021) [MITRE-STIX]\n\nThese links come directly from ThreatGroup -[USES]-> Technique -[MITIGATED_BY]-> Mitigation graph paths.","APT28 uses Network Denial of Service (T1498), which is mitigated by Filter Network Traffic (M1037).",5,5,3,"Includes the correct T1498 to M1037 pair, but the answer is much broader than the question."
+Q06,text,Which mitigations apply to APT28's Evil Twin technique (T1557.004)?,"Based on the provided evidence, the following technique-mitigation pairs apply to APT28's Evil Twin technique (T1557.004):
+
+1. Exploit Public-facing Application (T1190) -> Patch devices as advised by Cisco (ATT&CK ID: T1190): Patch devices to prevent exploitation of CVE-2017-6742 [APT28-CISCO-ROUTERS].
+2. Valid Accounts (T1078.001) -> Do not use SNMP if you are not required to configure or manage devices remotely (ATT&CK ID: T1078.001): Avoid using SNMP with default or weak community strings to prevent unauthorized access [APT28-CISCO-ROUTERS].
+
+Note: The provided evidence does not explicitly mention the Evil Twin technique (T1557.004) being used by APT28. However, based on the context, it appears that the techniques mentioned (Exploit Public-facing Application and Valid Accounts) are related to APT28's activities.",APT28 uses Evil Twin (T1557.004). Documented mitigations include User Training (M1017) and Network Intrusion Prevention (M1031).,2,2,3,Mentions Evil Twin but maps to unrelated advisory mitigations instead of M1017 and M1031.
+Q06,hybrid,Which mitigations apply to APT28's Evil Twin technique (T1557.004)?,"Based on the retrieved MITRE ATT&CK graph evidence, these are the top technique-to-mitigation links found for the requested threat group:\n\n- Phishing for Information (T1598) -> Software Configuration (M1054); User Training (M1017) [MITRE-STIX]\n- Tool (T1588.002) -> Pre-compromise (M1056) [MITRE-STIX]\n- PowerShell (T1059.001) -> Privileged Account Management (M1026); Code Signing (M1045); Execution Prevention (M1038) [MITRE-STIX]\n- Ingress Tool Transfer (T1105) -> Filter Network Traffic (M1037); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Logon Script (Windows) (T1037.001) -> Restrict Registry Permissions (M1024) [MITRE-STIX]\n- Network Denial of Service (T1498) -> Filter Network Traffic (M1037) [MITRE-STIX]\n- Pass the Hash (T1550.002) -> Privileged Account Management (M1026); User Account Management (M1018); User Account Control (M1052) [MITRE-STIX]\n- Evil Twin (T1557.004) -> User Training (M1017) [MITRE-STIX]\n- Search Open Technical Databases (T1596) -> Pre-compromise (M1056) [MITRE-STIX]\n- Credentials (T1589.001) -> Pre-compromise (M1056) [MITRE-STIX]\n- Windows Command Shell (T1059.003) -> Execution Prevention (M1038) [MITRE-STIX]\n- Spearphishing Attachment (T1566.001) -> Software Configuration (M1054); Antivirus/Antimalware (M1049); User Account Management (M1018); User Training (M1017); Restrict Web-Based Content (M1021) [MITRE-STIX]\n\nThese links come directly from ThreatGroup -[USES]-> Technique -[MITIGATED_BY]-> Mitigation graph paths.",APT28 uses Evil Twin (T1557.004). Documented mitigations include User Training (M1017) and Network Intrusion Prevention (M1031).,5,5,3,Includes the correct Evil Twin mitigations; answer contains many unrelated technique pairs.
+Q07,text,Which mitigation applies to APT28's Search Open Technical Databases technique (T1596)?,"Based on the provided evidence, I can answer the question as follows:
+
+The technique used by APT28 is Search Open Technical Databases (T1596). The mitigation that applies to this technique is:
+
+Search Open Technical Databases (T1596) -> Patch devices as advised by Cisco (no ATT&CK ID provided): patch devices to prevent exploitation of CVE-2017-6742 [APT28-CISCO-ROUTERS].
+
+Note that the ATT&CK ID for the mitigation is not provided in the evidence, so I've used a descriptive phrase to indicate the action.","APT28 uses Search Open Technical Databases (T1596), which maps to the Pre-compromise mitigation (M1056).",3,2,4,Correctly identifies T1596 but does not clearly return the expected M1056 mitigation.
+Q07,hybrid,Which mitigation applies to APT28's Search Open Technical Databases technique (T1596)?,"Based on the retrieved MITRE ATT&CK graph evidence, these are the top technique-to-mitigation links found for the requested threat group:\n\n- Phishing for Information (T1598) -> Software Configuration (M1054); User Training (M1017) [MITRE-STIX]\n- Tool (T1588.002) -> Pre-compromise (M1056) [MITRE-STIX]\n- PowerShell (T1059.001) -> Privileged Account Management (M1026); Code Signing (M1045); Execution Prevention (M1038) [MITRE-STIX]\n- Ingress Tool Transfer (T1105) -> Filter Network Traffic (M1037); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Logon Script (Windows) (T1037.001) -> Restrict Registry Permissions (M1024) [MITRE-STIX]\n- Network Denial of Service (T1498) -> Filter Network Traffic (M1037) [MITRE-STIX]\n- Pass the Hash (T1550.002) -> Privileged Account Management (M1026); User Account Management (M1018); User Account Control (M1052) [MITRE-STIX]\n- Evil Twin (T1557.004) -> User Training (M1017); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Search Open Technical Databases (T1596) -> Pre-compromise (M1056) [MITRE-STIX]\n- Credentials (T1589.001) -> Pre-compromise (M1056) [MITRE-STIX]\n- Windows Command Shell (T1059.003) -> Execution Prevention (M1038) [MITRE-STIX]\n- Spearphishing Attachment (T1566.001) -> Software Configuration (M1054); Antivirus/Antimalware (M1049); User Account Management (M1018); User Training (M1017); Restrict Web-Based Content (M1021) [MITRE-STIX]\n\nThese links come directly from ThreatGroup -[USES]-> Technique -[MITIGATED_BY]-> Mitigation graph paths.","APT28 uses Search Open Technical Databases (T1596), which maps to the Pre-compromise mitigation (M1056).",5,5,3,Includes the correct T1596 to M1056 relationship with substantial extra material.
+Q08,text,Which mitigation applies to APT28's Credentials technique (T1589.001)?,"Based on the provided evidence, the technique used by APT28 is:
+
+T1190 (Exploit Public-facing Application) -> CVE-2017-6742 (Cisco Bug ID: CSCve54313) [APT28-CISCO-ROUTERS]
+
+The mitigation for this technique is:
+
+Patch devices as advised by Cisco [APT28-CISCO-ROUTERS]
+
+Additionally, the evidence mentions that APT28 accessed routers using default and weak SNMP community strings, which is related to the technique:
+
+T1078.001 (Valid Accounts) -> Default Accounts [APT28-CISCO-ROUTERS]
+
+The mitigation for this technique is:
+
+Do not use SNMP if you are not required to configure or manage devices remotely to prevent unauthorized users from accessing your router [APT28-CISCO-ROUTERS]
+
+Note that the provided evidence does not contain a direct technique-mitigation pair for the Credentials technique (T1589.001).","APT28 uses Credentials (T1589.001), which maps to the Pre-compromise mitigation (M1056).",2,2,3,Mentions the requested technique but shifts to T1190/CVE-2017-6742 instead of the expected M1056 mapping.
+Q08,hybrid,Which mitigation applies to APT28's Credentials technique (T1589.001)?,"Based on the retrieved MITRE ATT&CK graph evidence, these are the top technique-to-mitigation links found for the requested threat group:\n\n- Phishing for Information (T1598) -> Software Configuration (M1054); User Training (M1017) [MITRE-STIX]\n- Tool (T1588.002) -> Pre-compromise (M1056) [MITRE-STIX]\n- PowerShell (T1059.001) -> Privileged Account Management (M1026); Code Signing (M1045); Execution Prevention (M1038) [MITRE-STIX]\n- Ingress Tool Transfer (T1105) -> Filter Network Traffic (M1037); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Logon Script (Windows) (T1037.001) -> Restrict Registry Permissions (M1024) [MITRE-STIX]\n- Network Denial of Service (T1498) -> Filter Network Traffic (M1037) [MITRE-STIX]\n- Pass the Hash (T1550.002) -> Privileged Account Management (M1026); User Account Management (M1018); User Account Control (M1052) [MITRE-STIX]\n- Evil Twin (T1557.004) -> User Training (M1017); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Search Open Technical Databases (T1596) -> Pre-compromise (M1056) [MITRE-STIX]\n- Credentials (T1589.001) -> Pre-compromise (M1056) [MITRE-STIX]\n- Windows Command Shell (T1059.003) -> Execution Prevention (M1038) [MITRE-STIX]\n- Spearphishing Attachment (T1566.001) -> Software Configuration (M1054); Antivirus/Antimalware (M1049); User Account Management (M1018); User Training (M1017); Restrict Web-Based Content (M1021) [MITRE-STIX]\n\nThese links come directly from ThreatGroup -[USES]-> Technique -[MITIGATED_BY]-> Mitigation graph paths.","APT28 uses Credentials (T1589.001), which maps to the Pre-compromise mitigation (M1056).",5,5,3,Includes the correct T1589.001 to M1056 relationship but is overly broad.
+Q09,text,Which mitigation applies to APT28's Windows Command Shell technique (T1059.003)?,"Based on the provided evidence, I can answer the question as follows:
+
+The question is about APT28's Windows Command Shell technique (T1059.003). However, the provided evidence does not mention APT28's use of Windows Command Shell. Instead, it mentions APT28's use of SNMP to gain access to router information and deploy malware.
+
+The evidence does mention APT28's use of Windows Command Prompt (T1059.003) in the context of Medusa actors, but not in the context of APT28.
+
+Therefore, I must say:
+
+Not enough evidence in the indexed advisories and graph to answer that reliably.
+
+However, if we look at the provided evidence, we can see that APT28 exploited CVE-2017-6742 (Cisco Bug ID: CSCve54313) to gain access to router information. This is related to the technique ""Exploit Public-facing Application"" (T1190).
+
+Since the question asks for a mitigation, I can provide a direct technique-mitigation pair:
+
+T1190 (Exploit Public-facing Application) -> Mitigation (Patch devices as advised by Cisco): Patch devices as advised by Cisco to prevent exploitation of CVE-2017-6742. [APT28-CISCO-RO","APT28 uses Windows Command Shell (T1059.003), which is mitigated by Execution Prevention (M1038).",2,2,3,Identifies T1059.003 but does not supply the expected M1038 mitigation.
+Q09,hybrid,Which mitigation applies to APT28's Windows Command Shell technique (T1059.003)?,"Based on the retrieved MITRE ATT&CK graph evidence, these are the top technique-to-mitigation links found for the requested threat group:\n\n- Phishing for Information (T1598) -> Software Configuration (M1054); User Training (M1017) [MITRE-STIX]\n- Tool (T1588.002) -> Pre-compromise (M1056) [MITRE-STIX]\n- PowerShell (T1059.001) -> Privileged Account Management (M1026); Code Signing (M1045); Execution Prevention (M1038) [MITRE-STIX]\n- Ingress Tool Transfer (T1105) -> Filter Network Traffic (M1037); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Logon Script (Windows) (T1037.001) -> Restrict Registry Permissions (M1024) [MITRE-STIX]\n- Network Denial of Service (T1498) -> Filter Network Traffic (M1037) [MITRE-STIX]\n- Pass the Hash (T1550.002) -> Privileged Account Management (M1026); User Account Management (M1018); User Account Control (M1052) [MITRE-STIX]\n- Evil Twin (T1557.004) -> User Training (M1017); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Search Open Technical Databases (T1596) -> Pre-compromise (M1056) [MITRE-STIX]\n- Credentials (T1589.001) -> Pre-compromise (M1056) [MITRE-STIX]\n- Windows Command Shell (T1059.003) -> Execution Prevention (M1038) [MITRE-STIX]\n- Spearphishing Attachment (T1566.001) -> Software Configuration (M1054); Antivirus/Antimalware (M1049); User Account Management (M1018); User Training (M1017); Restrict Web-Based Content (M1021) [MITRE-STIX]\n\nThese links come directly from ThreatGroup -[USES]-> Technique -[MITIGATED_BY]-> Mitigation graph paths.","APT28 uses Windows Command Shell (T1059.003), which is mitigated by Execution Prevention (M1038).",5,5,3,Includes the correct T1059.003 to M1038 relationship; answer is not concise.
+Q10,text,Which mitigations apply to APT28's Spearphishing Attachment technique (T1566.001)?,"Based on the provided evidence, the following direct technique-mitigation pairs are present:
+
+1. T1190 (Exploit Public-facing Application) -> Patch devices as advised by Cisco (ATT&CK ID: T1190): Patch devices to prevent exploitation of CVE-2017-6742 [APT28-CISCO-ROUTERS].
+2. T1078.001 (Valid Accounts) -> Do not use SNMP if you are not required to configure or manage devices remotely to prevent unauthorized users from accessing your router [APT28-CISCO-ROUTERS].
+
+Additionally, the following general recommendations are present:
+
+1. Segment networks to restrict lateral movement from initial infected devices and other devices in the same organization [AA25-071A].
+2. Filter network traffic by preventing unknown or untrusted origins from accessing remote services on internal systems [AA25-071A].
+
+Note that the provided evidence does not contain a comprehensive list of techniques used by APT28, but it does mention the exploitation of CVE-2017-6742 and the use of default SNMP community strings.","APT28 uses Spearphishing Attachment (T1566.001). Retrieved mitigations include Software Configuration (M1054), Antivirus/Antimalware (M1049), User Account Management (M1018), User Training (M1017), and Restrict Web-Based Content (M1021).",1,1,3,Answers with unrelated Cisco-router techniques and does not cover the Spearphishing Attachment mitigation set.
+Q10,hybrid,Which mitigations apply to APT28's Spearphishing Attachment technique (T1566.001)?,"Based on the retrieved MITRE ATT&CK graph evidence, these are the top technique-to-mitigation links found for the requested threat group:\n\n- Phishing for Information (T1598) -> Software Configuration (M1054); User Training (M1017) [MITRE-STIX]\n- Tool (T1588.002) -> Pre-compromise (M1056) [MITRE-STIX]\n- PowerShell (T1059.001) -> Privileged Account Management (M1026); Code Signing (M1045); Execution Prevention (M1038) [MITRE-STIX]\n- Ingress Tool Transfer (T1105) -> Filter Network Traffic (M1037); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Logon Script (Windows) (T1037.001) -> Restrict Registry Permissions (M1024) [MITRE-STIX]\n- Network Denial of Service (T1498) -> Filter Network Traffic (M1037) [MITRE-STIX]\n- Pass the Hash (T1550.002) -> Privileged Account Management (M1026); User Account Management (M1018); User Account Control (M1052) [MITRE-STIX]\n- Evil Twin (T1557.004) -> User Training (M1017); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Search Open Technical Databases (T1596) -> Pre-compromise (M1056) [MITRE-STIX]\n- Credentials (T1589.001) -> Pre-compromise (M1056) [MITRE-STIX]\n- Windows Command Shell (T1059.003) -> Execution Prevention (M1038) [MITRE-STIX]\n- Spearphishing Attachment (T1566.001) -> Software Configuration (M1054) [MITRE-STIX]\n\nThese links come directly from ThreatGroup -[USES]-> Technique -[MITIGATED_BY]-> Mitigation graph paths.","APT28 uses Spearphishing Attachment (T1566.001). Retrieved mitigations include Software Configuration (M1054), Antivirus/Antimalware (M1049), User Account Management (M1018), User Training (M1017), and Restrict Web-Based Content (M1021).",4,3,3,"Finds the requested technique and several correct mitigations, but the expected mitigation set is incomplete and mixed with extras."
+Q11,text,Which mitigations apply to APT28's Phishing for Information technique (T1598)?,"Based on the provided evidence, I can answer the question about the mitigations for APT28's Phishing for Information technique (T1598).
+
+Not enough evidence in the indexed advisories and graph to answer that reliably.
+
+However, I can provide some information about the mitigations for APT28's exploitation of CVE-2017-6742 (T1190) and the use of weak SNMP community strings (T1078.001).
+
+Here are the direct technique-mitigation pairs:
+
+1. T1190 (Exploit Public-facing Application) -> Mitigation: Patch devices as advised by Cisco (T1190.001): ""Patch devices as advised by Cisco."" [APT28-CISCO-ROUTERS]
+2. T1078.001 (Valid Accounts) -> Mitigation: Do not use SNMP if you are not required to configure or manage devices remotely (T1078.001.001): ""Do not use SNMP if you are not required to configure or manage devices remotely to prevent unauthorized users from accessing your router."" [APT28-CISCO-ROUTERS]
+
+Note that these pairs are based on the provided evidence and may not be exhaustive.",APT28 uses Phishing for Information (T1598). Documented mitigations include Software Configuration (M1054) and User Training (M1017).,2,2,3,Identifies T1598 but does not provide the two expected mitigations.
+Q11,hybrid,Which mitigations apply to APT28's Phishing for Information technique (T1598)?,"Based on the retrieved MITRE ATT&CK graph evidence, these are the top technique-to-mitigation links found for the requested threat group:\n\n- Phishing for Information (T1598) -> Software Configuration (M1054) [MITRE-STIX]\n- Tool (T1588.002) -> Pre-compromise (M1056) [MITRE-STIX]\n- PowerShell (T1059.001) -> Privileged Account Management (M1026); Code Signing (M1045); Execution Prevention (M1038) [MITRE-STIX]\n- Ingress Tool Transfer (T1105) -> Filter Network Traffic (M1037); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Logon Script (Windows) (T1037.001) -> Restrict Registry Permissions (M1024) [MITRE-STIX]\n- Network Denial of Service (T1498) -> Filter Network Traffic (M1037) [MITRE-STIX]\n- Pass the Hash (T1550.002) -> Privileged Account Management (M1026); User Account Management (M1018); User Account Control (M1052) [MITRE-STIX]\n- Evil Twin (T1557.004) -> User Training (M1017); Network Intrusion Prevention (M1031) [MITRE-STIX]\n- Search Open Technical Databases (T1596) -> Pre-compromise (M1056) [MITRE-STIX]\n- Credentials (T1589.001) -> Pre-compromise (M1056) [MITRE-STIX]\n- Windows Command Shell (T1059.003) -> Execution Prevention (M1038) [MITRE-STIX]\n- Spearphishing Attachment (T1566.001) -> Software Configuration (M1054); Antivirus/Antimalware (M1049); User Account Management (M1018); User Training (M1017); Restrict Web-Based Content (M1021) [MITRE-STIX]\n\nThese links come directly from ThreatGroup -[USES]-> Technique -[MITIGATED_BY]-> Mitigation graph paths.",APT28 uses Phishing for Information (T1598). Documented mitigations include Software Configuration (M1054) and User Training (M1017).,5,5,4,Provides the expected T1598 mitigation links with some additional graph context.
+Q12,text,Which mitigation applies to APT28's use of Tool (T1588.002)?,"Based on the provided evidence, I can answer the question as follows:
+
+APT28 uses the technique ""Exploit Public-facing Application"" (T1190) to exploit the vulnerability CVE-2017-6742 (Cisco Bug ID: CSCve54313) in Cisco routers.
+
+The mitigation that applies to this technique is:
+
+Exploit Public-facing Application (T1190) -> Patch devices as advised by Cisco (no ATT&CK ID provided): patch devices to prevent exploitation [APT28-CISCO-ROUTERS].
+
+Note that the ATT&CK ID for the mitigation is not provided in the evidence, but the action is clearly stated as ""patch devices as advised by Cisco"".","APT28 uses Tool (T1588.002), which maps to the Pre-compromise mitigation (M1056).",1,1,3,Answers with T1190/CVE-2017-6742 rather than T1588.002 and M1056.
+Q12,hybrid,Which mitigation applies to APT28's use of Tool (T1588.002)?,"The provided text appears to be a list of pairs of attack techniques and mitigation strategies, along with their corresponding MITRE-STIX relationships and citations. Here's a breakdown of the pairs:
+
+1. **PowerShell (ATTACK:T1059.001) -> Code Signing (ATTACK:M1045)**
+	* Description: APT28 uses PowerShell scripts and performs PowerShell commands.
+	* Mitigation: Set PowerShell execution policy to execute only signed scripts.
+2. **Logon Script (Windows) (ATTACK:T1037.001) -> Restrict Registry Permissions (ATTACK:M1024)**
+	* Description: APT28 loader Trojan adds Registry key to establish persistence.
+	* Mitigation: Ensure proper permissions are set for Registry hives to prevent users from modifying keys for logon scripts.
+3. **PowerShell (ATTACK:T1059.001) -> Execution Prevention (ATTACK:M1038)**
+	* Description: APT28 uses PowerShell scripts and performs PowerShell commands.
+	* Mitigation: Use application control, PowerShell Constrained Language mode, or restrict access to sensitive language elements.
+4. **Network Denial of Service (ATTACK:T1498) -> Filter Network Traffic (ATTACK:M1037)**
+	*","APT28 uses Tool (T1588.002), which maps to the Pre-compromise mitigation (M1056).",1,1,3,Lists other technique-mitigation pairs and does not answer the requested T1588.002 mapping.
+Q13,text,What vulnerability did APT28 exploit in the Cisco router advisory?,"Based on the provided evidence, the vulnerability exploited by APT28 in the Cisco router advisory is:
+
+CVE-2017-6742 (Cisco Bug ID: CSCve54313) [T1190]
+
+This vulnerability was first announced by Cisco on 29 June 2017, and patched software was made available. APT28 exploited the vulnerability to gain access to router information and deploy malware.
+
+The direct technique-mitigation pairs are:
+
+1. Exploit Public-facing Application (T1190) -> Patch devices as advised by Cisco.
+2. Valid Accounts (T1078.001) -> Use unique passwords and implement two-factor authentication.
+3. Gather Victim Network Information (T1590) -> Use logging tools to record commands executed on your network devices.
+
+Note: The provided evidence does not contain a graph, so the GRAPH EVIDENCE section is not applicable.",APT28 exploited CVE-2017-6742 on vulnerable Cisco routers.,5,5,5,Directly identifies CVE-2017-6742 as the vulnerability exploited by APT28.
+Q13,hybrid,What vulnerability did APT28 exploit in the Cisco router advisory?,"Based on the provided evidence and citations, here are the answers to the questions:
+
+1. What techniques has APT28 used to gain initial access to a victim network?
+
+ANSWER: APT28 has used legitimate credentials to gain initial access, maintain access, and exfiltrate data from a victim network. The group has specifically used credentials stolen through a spearphishing email campaign. (Citation: Cybersecurity Advisory GRU Brute Force Campaign July 2021)
+
+2. What malware has APT28 used to deploy on unpatched devices?
+
+ANSWER: APT28 accesses poorly maintained Cisco routers and deploys malware on unpatched devices using CVE-2017-6742. (Citation: APT28-CISCO-ROUTERS)
+
+3. What tool has APT28 used to capture information from air-gapped computers?
+
+ANSWER: APT28 uses a tool that captures information from air-gapped computers via an infected USB and transfers it to network-connected computer when the USB is inserted. (Citation: Microsoft SIR Vol 19)
+
+4. What technique has APT28 used to steal user OAuth access tokens?
+
+ANSWER: APT28 has used several malicious applications to steal user OAuth access tokens, including applications masquerading",APT28 exploited CVE-2017-6742 on vulnerable Cisco routers.,4,5,3,Includes the correct vulnerability but surrounds it with unrelated answers and context.
+Q14,text,Which ATT&CK technique in the APT28 Cisco router advisory corresponds to exploiting CVE-2017-6742?,"Based on the provided evidence, the ATT&CK technique that corresponds to exploiting CVE-2017-6742 is:
+
+T1190 (Exploit Public-facing Application) -> Mitigation: Patch devices as advised by Cisco, and use modern encrypted protocols such as SSH and SNMP v3.
+
+This is because the advisory states that APT28 exploited the vulnerability CVE-2017-6742 (Cisco Bug ID: CSCve54313) using the technique T1190, and provides mitigation advice to patch devices and use modern encrypted protocols.",The advisory maps exploitation of CVE-2017-6742 to Exploit Public-facing Application (T1190).,5,5,4,Correctly maps CVE-2017-6742 to T1190; includes extra mitigation detail.
+Q14,hybrid,Which ATT&CK technique in the APT28 Cisco router advisory corresponds to exploiting CVE-2017-6742?,"Based on the provided evidence, here are the answers to the questions:
+
+1. What techniques has APT28 used to gain execution on vulnerable Microsoft Exchange servers?
+
+ANSWER: APT28 has used a variety of public exploits, including CVE 2020-0688 and CVE 2020-17144, to gain execution on vulnerable Microsoft Exchange servers. (Citation: ATTACK:G0007 -[USES]-> ATTACK:T1190)
+
+2. What rootkit has APT28 used?
+
+ANSWER: APT28 has used a UEFI (Unified Extensible Firmware Interface) rootkit known as LoJax. (Citation: ATTACK:G0007 -[USES]-> ATTACK:T1014)
+
+3. What timestomping technique has APT28 used?
+
+ANSWER: APT28 has performed timestomping on victim files. (Citation: ATTACK:G0007 -[USES]-> ATTACK:T1070.006)
+
+4. What password spraying technique has APT28 used?
+
+ANSWER: APT28 has used a brute-force/password-spray tooling that operated in two modes: in password-spraying mode it conducted approximately four authentication attempts per hour per targeted account over the course of several days. (Citation",The advisory maps exploitation of CVE-2017-6742 to Exploit Public-facing Application (T1190).,3,3,2,Mentions T1190 but the response is dominated by unrelated technique discussion.
+Q15,text,How did APT28 gain access to router information according to the Cisco router advisory?,"Based on the provided evidence, APT28 gained access to router information by exploiting default and weak SNMP community strings, including the default ""public"" string, and by exploiting CVE-2017-6742.
+
+Here are the direct technique-mitigation pairs:
+
+1. T1078.001 (Valid Accounts) -> Mitigation: Use unique passwords and implement two-factor authentication based on public-private key. [APT28-CISCO-ROUTERS]
+2. T1190 (Exploit Public-facing Application) -> Mitigation: Patch devices as advised by Cisco, and disable legacy unencrypted protocols such as Telnet and SNMP v1 or v2c. [APT28-CISCO-ROUTERS]
+3. T1590 (Gather Victim Network Information) -> Mitigation: Use logging tools to record commands executed on your network devices, such as TACACS+ and Syslog. [APT28-CISCO-ROUTERS]
+
+Note that the provided evidence does not contain a graph, so the GRAPH EVIDENCE section is not applicable.","APT28 used weak or default SNMP community strings, including the default 'public', to gain access to router information.",5,5,5,"Directly explains the weak/default SNMP community strings, including 'public', used to gain router information."
+Q15,hybrid,How did APT28 gain access to router information according to the Cisco router advisory?,"Based on the provided evidence and citations, here are the answers to the questions:
+
+1. What techniques has APT28 used to gain initial access to a victim network?
+
+ANSWER: APT28 has used legitimate credentials to gain initial access, maintain access, and exfiltrate data from a victim network. The group has specifically used credentials stolen through a spearphishing email campaign. (Citation: Cybersecurity Advisory GRU Brute Force Campaign July 2021)
+
+2. What malware has APT28 used to deploy on unpatched devices?
+
+ANSWER: APT28 accesses poorly maintained Cisco routers and deploys malware on unpatched devices using CVE-2017-6742. (Citation: APT28-CISCO-ROUTERS)
+
+3. What tool has APT28 used to capture information from air-gapped computers?
+
+ANSWER: APT28 uses a tool that captures information from air-gapped computers via an infected USB and transfers it to network-connected computer when the USB is inserted. (Citation: Microsoft SIR Vol 19)
+
+4. What technique has APT28 used to steal user OAuth access tokens?
+
+ANSWER: APT28 has used several malicious applications to steal user OAuth access tokens, including applications masquerading","APT28 used weak or default SNMP community strings, including the default 'public', to gain access to router information.",3,3,2,Contains related Cisco-router evidence but does not answer the specific access-method question directly.
+Q16,text,Which ATT&CK technique maps to APT28 using default community strings in the Cisco router advisory?,"Based on the provided evidence, the ATT&CK technique that maps to APT28 using default community strings in the Cisco router advisory is:
+
+T1078.001 -> Mitigation: Limit access to SNMP from trusted hosts only, or disable SNMP MIBs (ATT&CK ID: T1078.001): Limit access to SNMP from trusted hosts only, or disable SNMP MIBs [APT28-CISCO-ROUTERS].
+
+This technique is used by APT28 to gain access to router information by using default or weak SNMP community strings, as mentioned in the advisory.",The advisory maps use of default community strings to Valid Accounts: Default Accounts (T1078.001).,5,5,4,Correctly identifies T1078.001; additional mitigation detail is unnecessary but understandable.
+Q16,hybrid,Which ATT&CK technique maps to APT28 using default community strings in the Cisco router advisory?,"Based on the provided evidence, here are the answers to the questions:
+
+1. What techniques has APT28 used to gain persistence on a victim's system?
+
+ANSWER: APT28 has used the following techniques to gain persistence on a victim's system:
+* Registry Run Keys / Startup Folder (ATTACK:G0007 -> ATTACK:T1547.001)
+* Password Spraying (ATTACK:G0007 -> ATTACK:T1110.003)
+
+2. What tools has APT28 used to conduct brute-force attacks?
+
+ANSWER: APT28 has used the following tools to conduct brute-force attacks:
+* Brute-force/password-spray tooling (ATTACK:G0007 -> ATTACK:T1110.003)
+
+3. What techniques has APT28 used to collect data from a victim's system?
+
+ANSWER: APT28 has used the following techniques to collect data from a victim's system:
+* File and Directory Discovery (ATTACK:G0007 -> ATTACK:T1083)
+* Data from Local System (ATTACK:G0007 -> ATTACK:T1005)
+
+4. What techniques has APT28 used to gain initial access to a victim's system?
+
+ANSWER: APT28 has used the following techniques to gain initial",The advisory maps use of default community strings to Valid Accounts: Default Accounts (T1078.001).,1,1,2,Answers a different persistence question and does not provide T1078.001.
+Q17,text,Which ATT&CK reconnaissance technique is listed for APT28 in the Cisco router advisory?,"Based on the provided evidence, the ATT&CK reconnaissance technique used by APT28 is:
+
+T1590 -> Gather Victim Network Information: APT28 accessed victim routers by using default community strings such as “public” and exploited CVE-2017-6742 (Cisco Bug ID: CSCve54313) to gain access to router information and perform reconnaissance on victim devices. [APT28-CISCO-ROUTERS]
+
+This technique is paired with the following mitigation:
+
+None explicitly mentioned in the provided text, but the advisory suggests patching devices as advised by Cisco and not using SNMP if not required to configure or manage devices remotely.",The advisory lists Gather Victim Network Information (T1590) as an APT28 reconnaissance technique.,5,5,4,Correctly identifies T1590 Gather Victim Network Information with supporting advisory detail.
+Q17,hybrid,Which ATT&CK reconnaissance technique is listed for APT28 in the Cisco router advisory?,"Based on the provided evidence, here are the answers to the questions:
+
+1. What techniques has APT28 used to gain persistence on a victim's system?
+
+ANSWER: APT28 has used the following techniques to gain persistence on a victim's system:
+* Registry Run Keys / Startup Folder (ATTACK:G0007 -> ATTACK:T1547.001)
+* Password Spraying (ATTACK:G0007 -> ATTACK:T1110.003)
+
+2. What tools has APT28 used to conduct brute-force attacks?
+
+ANSWER: APT28 has used the following tools to conduct brute-force attacks:
+* Brute-force/password-spray tooling (ATTACK:G0007 -> ATTACK:T1110.003)
+
+3. What techniques has APT28 used to collect data from a victim's system?
+
+ANSWER: APT28 has used the following techniques to collect data from a victim's system:
+* File and Directory Discovery (ATTACK:G0007 -> ATTACK:T1083)
+* Data from Local System (ATTACK:G0007 -> ATTACK:T1005)
+
+4. What techniques has APT28 used to gain initial access to a victim's system?
+
+ANSWER: APT28 has used the following techniques to gain initial",The advisory lists Gather Victim Network Information (T1590) as an APT28 reconnaissance technique.,1,1,2,Answers an unrelated persistence question and misses T1590.
+Q18,text,What path connects APT28 to Privileged Account Management through PowerShell?,"Based on the provided evidence, I can answer the question as follows:
+
+There is no direct connection between APT28 and Privileged Account Management through PowerShell in the provided text evidence. However, I can identify some related information:
+
+* APT28 exploited the vulnerability CVE-2017-6742 using SNMP (T1190) [APT28-CISCO-ROUTERS].
+* APT28 used SNMP to gain access to router information and deploy malware (T1078.001) [APT28-CISCO-ROUTERS].
+* The advisory AA25-071A discusses Medusa ransomware, which uses PowerShell to download and execute files (T1027) [AA25-071A].
+* The advisory AA25-071A also discusses the use of psexec.exe to execute commands and create new user accounts (T1136.002) [AA25-071A].
+
+However, I cannot establish a direct connection between APT28 and Privileged Account Management through PowerShell.
+
+If I were to provide a technique-mitigation pair, it would be:
+
+* T1078.001 (Exploitation of Remote Services) -> Mitigation: Filter network traffic by preventing unknown or untrusted origins from accessing remote services on internal systems [AA25-071A",APT28 (G0007) -[USES]-> PowerShell (T1059.001) -[MITIGATED_BY]-> Privileged Account Management (M1026).,1,1,3,States there is no direct path and does not provide the expected G0007 to T1059.001 to M1026 path.
+Q18,hybrid,What path connects APT28 to Privileged Account Management through PowerShell?,"Based on the provided evidence, here are the answers to the questions:
+
+1. What techniques has APT28 used to store captured credential information?
+
+ANSWER: APT28 has used the technique of storing captured credential information in a file named pi.log. (Citation: Microsoft SIR Vol 19)
+
+2. What mitigation can be used to prevent PowerShell from executing arbitrary Windows APIs or files?
+
+ANSWER: Use application control where appropriate. PowerShell Constrained Language mode can be used to restrict access to sensitive or otherwise dangerous language elements. (Citation: Palo Alto Sofacy 06-2018)
+
+3. What tools has APT28 used to encrypt and obfuscate payloads?
+
+ANSWER: APT28 has used RTL, custom encryption algorithm, base64, XOR, and RC4 to encrypt and obfuscate payloads. (Citation: Bitdefender)
+
+4. What technique has APT28 used to conduct brute-force/password-spray attacks?
+
+ANSWER: APT28 has used a brute-force/password-spray tooling that operated in two modes: in password-spraying mode it conducted approximately four authentication attempts per hour per targeted account over the course of several days. (Citation: DOJ GRU Indictment Jul 2018)
+
+",APT28 (G0007) -[USES]-> PowerShell (T1059.001) -[MITIGATED_BY]-> Privileged Account Management (M1026).,1,1,2,Answers a different credential-storage question and misses the requested path.
+Q19,text,What path connects APT28 to User Training through Evil Twin?,"Based on the provided evidence, I can answer the question as follows:
+
+There is no direct connection between APT28 and User Training through Evil Twin in the provided text evidence. However, I can identify some techniques used by APT28 and potential mitigations:
+
+Technique (ATT&CK ID) -> Mitigation (ATT&CK ID): short action [source IDs]
+
+* Exploit Public-facing Application (T1190) -> Patch devices as advised by Cisco [APT28-CISCO-ROUTERS]
+* Valid Accounts (T1078.001) -> Do not use SNMP if you are not required to configure or manage devices remotely [APT28-CISCO-ROUTERS]
+* Gather Victim Network Information (T1590) -> Segment networks to restrict lateral movement from initial infected devices and other devices in the same organization [AA25-071A]
+
+Note that the question asks for a path connecting APT28 to User Training through Evil Twin, but there is no evidence of such a connection in the provided text.",APT28 (G0007) -[USES]-> Evil Twin (T1557.004) -[MITIGATED_BY]-> User Training (M1017).,1,1,3,States there is no direct connection and misses the expected G0007 to T1557.004 to M1017 path.
+Q19,hybrid,What path connects APT28 to User Training through Evil Twin?,"Based on the provided evidence and citations, here are the answers to the questions:
+
+1. What techniques have been used by APT28 to carry out reconnaissance and deploy malware on Cisco routers?
+
+ANSWER: APT28 has used the following techniques:
+* Exploit Public-Facing Application (T1190)
+* Archive via Utility (T1560.001)
+* Data from Information Repositories (T1213)
+* Remote Data Staging (T1074.002)
+
+Citation: https://www.cisa.gov/sites/default/files/2023-04/apt28-exploits-known-vulnerability-to-carry-out-reconnaissance-and-deploy-malware-on-cisco-routers.pdf
+
+2. What mitigations can be used to prevent APT28 from carrying out reconnaissance and deploying malware on Cisco routers?
+
+ANSWER: The following mitigations can be used:
+* Implementing a wireless intrusion prevention system (WIPS) to identify traffic patterns indicative of adversary-in-the-middle activity and scan for evil twins and rogue access points (M1031)
+* Limiting credential overlap across accounts and systems by training users and administrators not to use the same password for multiple accounts (M1017)
+
+Citation: https://attack.mitre.org/
+
+3. What techniques",APT28 (G0007) -[USES]-> Evil Twin (T1557.004) -[MITIGATED_BY]-> User Training (M1017).,2,2,2,Mentions M1017 and related evidence but does not clearly provide the requested Evil Twin path.
+Q20,text,What path connects APT28 to Network Intrusion Prevention through Ingress Tool Transfer?,"Based on the provided evidence, I can answer the question as follows:
+
+There is no direct path connecting APT28 to Network Intrusion Prevention through Ingress Tool Transfer in the provided text evidence. However, I can identify some related techniques and mitigations:
+
+* APT28 uses Ingress Tool Transfer (T1105) to facilitate the exfiltration of data to the Medusa C2 servers.
+* APT28 uses PowerShell (T1059.001) and the Windows Command Prompt (cmd.exe) (T1059.003) for network and filesystem enumeration, which is related to Ingress Tool Transfer.
+* APT28 uses Windows Management Instrumentation (WMI) (T1047) for querying system information.
+
+As for mitigations, the provided text evidence mentions the following:
+
+* Patch devices as advised by Cisco to prevent exploitation of CVE-2017-6742.
+* Do not use SNMP if not required to configure or manage devices remotely to prevent unauthorized access.
+* Establish allow and deny lists for files across the network.
+
+However, I must note that the question asks for a path connecting APT28 to Network Intrusion Prevention through Ingress Tool Transfer, which is not explicitly stated in the provided text evidence.
+
+Technique-Mitigation Pairs",APT28 (G0007) -[USES]-> Ingress Tool Transfer (T1105) -[MITIGATED_BY]-> Network Intrusion Prevention (M1031).,2,2,3,Mentions T1105 but does not provide the full G0007 to T1105 to M1031 graph path.
+Q20,hybrid,What path connects APT28 to Network Intrusion Prevention through Ingress Tool Transfer?,"Based on the provided evidence and citations, here are the answers to the questions:
+
+1. What techniques has APT28 used to compromise targets?
+
+ANSWER: APT28 has used the following techniques to compromise targets:
+* Strategic web compromise (ATTACK:T1189)
+* Custom exploit kits (ATTACK:T1189)
+* Brute-force/password-spray tooling (ATTACK:T1110.003)
+* Spearphishing (ATTACK:T1078)
+* Malware (Malware:aff69abc20c19f21)
+
+2. What tools has APT28 used to carry out its activities?
+
+ANSWER: APT28 has used the following tools to carry out its activities:
+* Koadic (ATTACK:T1588.002)
+* Mimikatz (ATTACK:T1588.002)
+* Responder (ATTACK:T1588.002)
+* Custom password retrieval tools (ATTACK:T1003)
+
+3. What data has APT28 collected from its victims?
+
+ANSWER: APT28 has collected the following data from its victims:
+* Files from network shared drives (ATTACK:T1039)
+* Files from information repositories (ATTACK:T1213)
+* User login credentials (ATTACK:T1589",APT28 (G0007) -[USES]-> Ingress Tool Transfer (T1105) -[MITIGATED_BY]-> Network Intrusion Prevention (M1031).,1,1,2,Answers a broad compromise-techniques question and misses the requested path.

@@ -1,0 +1,5 @@
+# Optional official RAGAS integration; see README for caveats.
+ragas>=0.2.13,<0.3
+langchain-ollama>=0.2,<0.4
+langchain-huggingface>=0.1,<0.3
+datasets>=3,<4
