@@ -42,6 +42,12 @@ def cli():
     q.add_argument("question", nargs="+", help="Question in ordinary English")
     q.add_argument("--mode", choices=["hybrid", "text"], default="hybrid")
     sp.add_parser("stats", help="Counts of actual loaded records")
+    pg = sp.add_parser("pagerank", help="Run PageRank on the live Neo4j Entity graph (GDS preferred)")
+    pg.add_argument("--engine", choices=["auto", "gds", "networkx"], default="auto")
+    pg.add_argument("--top", type=int, default=15)
+    pgb = sp.add_parser("pagerank-benchmark", help="Run reproducible PageRank on the verified QA benchmark subgraph")
+    pgb.add_argument("--queries", type=Path, default=ROOT / "eval" / "eval_queries.json")
+    pgb.add_argument("--top", type=int, default=15)
     t = sp.add_parser("triple-eval", help="Evaluate predicted relations against HUMAN-verified gold triples")
     t.add_argument("--gold", type=Path, default=ROOT / "eval" / "gold_triples.json")
     sp.add_parser("annotation-candidates", help="Create up to 60 UNVERIFIED relation-review items")
@@ -74,6 +80,11 @@ def cli():
     elif args.command == "annotation-candidates":
         from ctirag.annotations import make_gold_candidates
         output(make_gold_candidates(extraction_file, ROOT / "eval" / "candidate_gold_triples.json"))
+    elif args.command == "pagerank-benchmark":
+        from ctirag.analytics import pagerank_from_eval_queries, save_result
+        result = pagerank_from_eval_queries(args.queries, args.top)
+        save_result(result, ROOT / "outputs" / "pagerank_benchmark.json")
+        output(result)
     elif args.command == "triple-eval":
         from ctirag.evaluate import triple_metrics
         if not extraction_file.exists():
@@ -115,6 +126,11 @@ def cli():
                 output(embed_graph(g, cache / "embeddings", not args.skip_node2vec))
             elif args.command == "stats":
                 output(g.stats())
+            elif args.command == "pagerank":
+                from ctirag.analytics import run_pagerank, save_result
+                result = run_pagerank(g, args.top, args.engine)
+                save_result(result, ROOT / "outputs" / "pagerank_live.json")
+                output(result)
             elif args.command in ("ask", "qa-eval"):
                 from ctirag.qa import QA
                 qa = QA(g, cache / "embeddings")
